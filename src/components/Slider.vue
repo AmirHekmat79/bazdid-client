@@ -1,0 +1,28 @@
+<template>
+  <Slider>
+    <SliderItem>1</SliderItem>
+    <SliderItem>2</SliderItem>
+    <SliderItem>3</SliderItem>
+  </Slider>
+  <NoArrowSlider>
+    <SliderItem>1</SliderItem>
+    <SliderItem>2</SliderItem>
+    <SliderItem>3</SliderItem>
+  </NoArrowSlider>
+  <NoButtonSlider>
+    <SliderItem>1</SliderItem>
+    <SliderItem>2</SliderItem>
+    <SliderItem>3</SliderItem>
+  </NoButtonSlider>
+  <NoArrowSlider>
+    <SliderItem
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtnvAOajH9gS4C30cRF7rD_voaTAKly2Ntaw&s"
+    ></SliderItem>
+    <SliderItemCover
+      src="https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg"
+    ></SliderItemCover>
+    <SliderItemCover
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8JasfPOujOCnkLNm5DEpsUoXLWPrZL26KxQ&s"
+    ></SliderItemCover>
+  </NoArrowSlider>
+</template>
