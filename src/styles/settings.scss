@@ -8,3 +8,22 @@
 // @use 'vuetify/settings' with (
 //   $color-pack: false
 // );
+
+@font-face {
+    font-family: 'IRANSansWeb';
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://cdn.kn2.ir/fonts/iransans/woff/IRANSansWeb(FaNum).woff') format('woff');
+}
+@font-face {
+    font-family: 'sepid';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/sepid/webfont(woff2)/Sepid-Black.woff2') format('woff2');
+}
+
+body , p, h1, h2, h3,input,a{
+    font-family: 'IRANSansWeb' !important;
+    margin: 0px;
+    padding: 0px;
+}

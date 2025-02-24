@@ -89,7 +89,7 @@ export default createVuetify({
     },
     SecondaryButton: {
       variant: "outlined",
-      color: "primary",
+      color: "black",
       rounded: "lg",
       ripple: "false",
       class: "ma-1",
