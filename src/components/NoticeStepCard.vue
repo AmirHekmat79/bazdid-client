@@ -10,7 +10,7 @@
             <h3 class="card-text text-right">قبل از تصویر برداری راهنمای زیر را مشاهده کنید</h3>
           </v-card-text>
           <v-card-actions class="mt-4">
-            <router-link to="/ManualPage"> <SecondaryButton class="text-white modal-btn ">راهنمای تصویربرداری از خودرو</SecondaryButton></router-link>
+           <SecondaryButton class="text-white modal-btn " > <router-link to="/ManualPage"><p class="text-white">راهنمای تصویربرداری از خودرو</p></router-link></SecondaryButton>
           </v-card-actions>
         </v-card>
       </v-col>
@@ -51,7 +51,7 @@ export default {
 }
 
 .modal-btn{
-   padding:10px 90px;
+   padding:10px 70px;
    font-size:16px;
 }
 </style>

@@ -14,7 +14,7 @@ export default{
 
 <style scoped>
 .login-card{
-  background-image: url(../../public/images/images_1662884527.jpg);
+  /* background-image: url(../../public/images/images_1662884527.jpg); */
   height: 100vh;
   background-position: center;
   /* background-repeat: no-repeat; */

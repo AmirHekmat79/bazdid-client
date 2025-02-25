@@ -81,11 +81,12 @@ export default createVuetify({
   defaults: {
     PrimaryButton: {
       variant: "flat",
-      color: "primary",
+      color: "#2980b9",
       rounded: "lg",
       ripple: "false",
       class: "ma-1",
       bgColor: "surface",
+      
     },
     SecondaryButton: {
       variant: "outlined",

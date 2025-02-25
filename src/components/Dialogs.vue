@@ -9,7 +9,7 @@
         <template v-slot:activator="{ props: activatorProps }">
             <v-expansion-panels>
         <v-expansion-panel
-            title="عنوان مرحله اول"
+            title='عنوان مرحله اول'
             v-bind="activatorProps"
             class="text-info"
         >
@@ -30,11 +30,11 @@
                     </template>
 
                     <template v-slot:item.3>
-                        <v-card title="تکمیل مشخصات" flat>...</v-card>
+                        <v-card title="تکمیل مشخصات" flat><RouterLink to="/AccomplishProcess">ثبت اطلاعات لوازم جانبی خودرو</RouterLink></v-card>
                     </template>
-                    <template v-slot:item.4>
+                    <!-- <template v-slot:item.4>
                         <v-card title="تایید و ارسال نهایی" flat>...</v-card>
-                    </template>
+                    </template> -->
                     <template v-slot:prev>
                         <v-btn @click="prevStep">قبلی</v-btn>
                            </template>
@@ -66,7 +66,8 @@ export default {
    data() {
     return {
         step: 1 ,
-        items:['مرحله اول', 'مرحله دوم', 'تکمیل مشخصات', 'تایید و ارسال نهایی'],
+        items:['مرحله اول', 'مرحله دوم', 'تکمیل مشخصات',],
+        title:'عنوان مرحله اول'
     };
  },
  methods: {
@@ -81,7 +82,9 @@ export default {
             }
         },
 
+        
  },
+
 };
  </script>
 <style scoped>
