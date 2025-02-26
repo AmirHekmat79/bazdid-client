@@ -1,30 +1,42 @@
 <template>
     <v-container class="mx-auto">
    <v-row>
+    <v-progress-circular
+      :model-value="value"
+      :rotate="360"
+      :size="100"
+      :width="15"
+      color="teal"
+      class="mx-auto"
+    >
+      {{ value }}
+    </v-progress-circular>
+
      <v-col
        cols="12"
        class="mx-auto"
        v-for="(item , index) in items"
        :key="index"
      >
-     
      <v-card elavation="8" class="card-container h-auto">
           <div class="v-row justify-space-between   align-center">
             <!-- <img class="card-img" src="../../public/images/images_1662884527.jpg"/> -->
             <img
-
             :src="item.imageUrl ? item.imageUrl : item.imageBaseUrl "
+            ref="previewImgElement"
             class="preview-image"
             aspect-ratio="1"
           />
           
           <SingleImage
          v-show="!item.imageUrl"
+           class="uploader"
            ref="fileInputs"
           accept="image/*"
           label="عکس خودرو"
           @change="(event) => onFileChange(event, index)"
           :rules="[checkFileSize('file')]"
+          
         ></SingleImage>
       
         <v-card-text>
@@ -32,7 +44,7 @@
           </v-card-text>
           </div>
           <v-card-actions class="mt-4 mr-auto card-actions-container  w-50">
-            <SecondaryButton @click="triggerFileInput(index)" class="text-black modal-btn mx-auto"> افزودن عکس </SecondaryButton>
+            <SecondaryButton @click="triggerFileInput(index)" ref="addImageBtn"  :disabled="item.imageUrl"  class="text-black bg-info modal-btn mx-auto"> افزودن عکس </SecondaryButton>
           </v-card-actions>
         </v-card>
      </v-col>
@@ -48,15 +60,34 @@ export default {
    return {
     items : [
         {id : 1 , title : 'جلو و پلاک' , imageUrl: null ,imageBaseUrl : '../../public/images/frontSide.jpg'},
-        {id : 2 , title : 'عقب و پلاک' , imageUrl: null ,imageBaseUrl : '../../public/images/frontSide.jpg'},
-        {id : 3 , title : 'جلو و راست' , imageUrl: null ,imageBaseUrl : '../../public/images/frontSide.jpg'},
+        {id : 2 , title : 'عقب و پلاک' , imageUrl: null ,imageBaseUrl : '../../public/images/backSide.webp'},
+        {id : 3 , title : 'جلو و راست' , imageUrl: null ,imageBaseUrl : '../../public/images/rightSide.jpg'},
     ],
     file: null,
     imageUrl: null,
-     
+    interval: {},
+    value: 30,
    };
  },
+ beforeUnmount () {
+      clearInterval(this.interval);
+    },
+ 
+ mounted(){
+  this.startCountdown();
+ }
+,
  methods: {
+  startCountdown() {
+      this.interval = setInterval(() => {
+        if (this.value > 0) {
+          this.value--; 
+        } else {
+          clearInterval(this.interval); 
+          this.$router.go(0);
+        }
+      }, 1000);
+    },
 
   onFileChange(event , index) {
 
@@ -67,23 +98,34 @@ export default {
       }
     },
     triggerFileInput(index) {
-      // Ensure the ref exists before trying to click it
       const fileInput = this.$refs.fileInputs[index];
       if (fileInput) {
         fileInput.click();
-      } else {
-        console.error(`File input for index ${index} is undefined.`);
+       
+      } else if( this.$refs.previewImgElement[index].src == this.items[index].imageUrl) {
+        this.$refs.previewImgElement[index].src = '../../public/images/Page-1.png';
       }
+     else {
+      console.error(`File input for index ${index} is undefined.`);
+     }
     },
     checkFileSize(valueName) {
       console.log(valueName);
       return FileSize(valueName, 2); //2Mg
     },
  
+   
  },
+
 };
  </script>
 <style scoped>
+.uploader{
+  visibility: hidden;
+}
+.v-progress-circular {
+  transition: all 1s linear;
+}
 .upload-card {
   max-width: 30px;
   margin: auto;
@@ -100,10 +142,10 @@ export default {
 .preview-image {
   border-radius: 15px;
   margin-top: 10px;
-  width: 50%;
+  width: 51%;
 }
 .card-container{
-  background: #fffffff5;
+  background: #fffffd;
   border-radius: 20px;
   border-bottom-left-radius: 0px;
   padding: 16px;
@@ -126,5 +168,8 @@ export default {
 .image-baseUrl{
   width:44%;
   border-radius: 6px;
+}
+.scroll-animation {
+  transform: translateY(-100%);
 }
 </style>

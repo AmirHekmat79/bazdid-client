@@ -36,7 +36,7 @@
                         <v-card title="تایید و ارسال نهایی" flat>...</v-card>
                     </template> -->
                     <template v-slot:prev>
-                        <v-btn @click="prevStep">قبلی</v-btn>
+                        <v-btn :disabled="true" @click="prevStep">قبلی</v-btn>
                            </template>
                          <template v-slot:next>
                             <v-btn @click="nextStep">بعدی</v-btn>

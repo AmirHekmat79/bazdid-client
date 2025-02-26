@@ -35,9 +35,9 @@
          <p>فشار دکمه:دکمه عکاسی را فشار دهید و منتظر بمانید تا پردازش تصویر تکمیل شود.</p>
        </h2>
         </v-card-text>
-       <v-card-actions class="mt-16">
+       <!-- <v-card-actions class="mt-16">
         <PrimaryButton class="mx-auto text-center">گرفتن عکس</PrimaryButton>
-       </v-card-actions>
+       </v-card-actions> -->
        </v-card>
       </v-col>
     </v-row>

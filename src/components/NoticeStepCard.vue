@@ -9,7 +9,7 @@
           <v-card-text>
             <h3 class="card-text text-right">قبل از تصویر برداری راهنمای زیر را مشاهده کنید</h3>
           </v-card-text>
-          <v-card-actions class="mt-4">
+          <v-card-actions class="mt-4 mx-10 text-center">
            <SecondaryButton class="text-white modal-btn " > <router-link to="/ManualPage"><p class="text-white">راهنمای تصویربرداری از خودرو</p></router-link></SecondaryButton>
           </v-card-actions>
         </v-card>
