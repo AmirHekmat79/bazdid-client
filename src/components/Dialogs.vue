@@ -26,15 +26,8 @@
                     </template>
 
                     <template v-slot:item.2>
-                        <v-card title="مرحله دوم" flat>...</v-card>
+                       <v-card title="تکمیل مشخصات" flat> <RouterLink to="/AccomplishProcess" class="no-underline font-weight-bold" >ثبت اطلاعات لوازم جانبی خودرو</RouterLink></v-card>
                     </template>
-
-                    <template v-slot:item.3>
-                        <v-card title="تکمیل مشخصات" flat><RouterLink to="/AccomplishProcess">ثبت اطلاعات لوازم جانبی خودرو</RouterLink></v-card>
-                    </template>
-                    <!-- <template v-slot:item.4>
-                        <v-card title="تایید و ارسال نهایی" flat>...</v-card>
-                    </template> -->
                     <template v-slot:prev>
                         <v-btn :disabled="true" @click="prevStep">قبلی</v-btn>
                            </template>
@@ -66,7 +59,7 @@ export default {
    data() {
     return {
         step: 1 ,
-        items:['مرحله اول', 'مرحله دوم', 'تکمیل مشخصات',],
+        items:['مرحله اول', 'مرحله دوم',],
         title:'عنوان مرحله اول'
     };
  },
@@ -95,5 +88,10 @@ export default {
     border-radius:10px; 
     border-bottom : 3px solid #2980b9;
     
+}
+
+.no-underline{
+    text-decoration: none;
+
 }
 </style>

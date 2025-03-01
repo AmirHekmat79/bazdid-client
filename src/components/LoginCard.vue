@@ -16,20 +16,20 @@
      <v-card elavation="8"
      class="card-container text-center"
            subtitle="ورود به اپ بازدید"
-           title="جهت ورود شماره همراه خود را وارد کنید"
+           title="جهت ورود  کد امنیتی  را وارد کنید"
            elevation="16"
        >
        <TextInput
-       label="شماره موبایل"
-       v-model="numericValue"
-       @input="applyNumericFilter('numericValue')"
-       class="mobile-input"
-   />
+        label="فقط عدد وارد کنید"
+        v-model="numericValue"
+        @input="applyNumericFilter('numericValue')"
+        :rules = [rules]
+      />
     
      <v-row>
      <v-container>
          <v-col  cols="12">
-         <PrimaryButton class="w-100 font-weight-bold text-subtitle-1 " color="blue"> <RouterLink to="/SecurityPage">ادامه</RouterLink> </PrimaryButton>
+         <PrimaryButton class="w-100 font-weight-bold text-subtitle-1 " color="blue" @click="handleNavigation">ورود به اپلیکیشن </PrimaryButton>
      </v-col>
      </v-container>
  </v-row>
@@ -53,13 +53,19 @@ export default {
   data() {
     return {
       numericValue: "",
+     
     };
   },
   methods: {
+    
     applyNumericFilter(valueName) {
-      this[valueName] = numericOnly(this[valueName]);
-    },
-
+     this[valueName] = numericOnly(this[valueName]);
+   },
+   handleNavigation(){
+    if(this.numericValue){
+      this.$router.push('/FirstStep');
+    }
+   }
   },
 };
   </script>

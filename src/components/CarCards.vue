@@ -17,8 +17,9 @@
        class="mx-auto"
        v-for="(item , index) in items"
        :key="index"
+      :ref="`card-${index}`"
      >
-     <v-card elavation="8" class="card-container h-auto">
+     <v-card elavation="8" class="card-container h-auto"  >
           <div class="v-row justify-space-between   align-center">
             <!-- <img class="card-img" src="../../public/images/images_1662884527.jpg"/> -->
             <img
@@ -54,7 +55,6 @@
  
  <script>
 import { FileSize } from "../utils/filter";
-
 export default {
    data() {
    return {
@@ -96,6 +96,7 @@ export default {
         this.items[index].file = selectedFile;
         this.items[index].imageUrl = URL.createObjectURL(selectedFile);
       }
+     
     },
     triggerFileInput(index) {
       const fileInput = this.$refs.fileInputs[index];
@@ -114,7 +115,7 @@ export default {
       return FileSize(valueName, 2); //2Mg
     },
  
-   
+ 
  },
 
 };

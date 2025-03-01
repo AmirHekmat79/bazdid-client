@@ -22,6 +22,5 @@ declare module 'vue-router/auto-routes' {
     '/AccomplishProcess': RouteRecordInfo<'/AccomplishProcess', '/AccomplishProcess', Record<never, never>, Record<never, never>>,
     '/FirstStep': RouteRecordInfo<'/FirstStep', '/FirstStep', Record<never, never>, Record<never, never>>,
     '/ManualPage': RouteRecordInfo<'/ManualPage', '/ManualPage', Record<never, never>, Record<never, never>>,
-    '/SecurityPage': RouteRecordInfo<'/SecurityPage', '/SecurityPage', Record<never, never>, Record<never, never>>,
   }
 }

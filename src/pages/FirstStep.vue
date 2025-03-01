@@ -37,4 +37,5 @@ export default {
 .step-card-container{
     margin-top: 20px;
 }
+
 </style>
