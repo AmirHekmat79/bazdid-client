@@ -44,8 +44,9 @@
            <h2 class="card-text">{{item.title}}</h2>
           </v-card-text>
           </div>
-          <v-card-actions class="mt-4 mr-auto card-actions-container  w-50">
-            <SecondaryButton @click="triggerFileInput(index)" ref="addImageBtn"  :disabled="item.imageUrl"  class="text-black bg-info modal-btn mx-auto"> افزودن عکس </SecondaryButton>
+          <v-card-actions class="mt-4 mr-auto card-actions-container">
+            <SecondaryButton v-if="!item.imageUrl" @click="triggerFileInput(index)" ref="addImageBtn"  :disabled="item.imageUrl"  class="text-black bg-info modal-btn mr-auto"> افزودن عکس </SecondaryButton>
+            <img class="checked-img" v-if="item.imageUrl" src="../../public/images/Page-1.png"/>
           </v-card-actions>
         </v-card>
      </v-col>
@@ -75,6 +76,7 @@ export default {
  
  mounted(){
   this.startCountdown();
+  this.navigateToNextProcess();
  }
 ,
  methods: {
@@ -96,7 +98,7 @@ export default {
         this.items[index].file = selectedFile;
         this.items[index].imageUrl = URL.createObjectURL(selectedFile);
       }
-     
+      this.navigateToNextProcess();
     },
     triggerFileInput(index) {
       const fileInput = this.$refs.fileInputs[index];
@@ -115,7 +117,11 @@ export default {
       return FileSize(valueName, 2); //2Mg
     },
  
- 
+    navigateToNextProcess(){
+         if(this.items.every((item)=> item.imageUrl !== null)){
+          this.$router.push('/AccomplishProcess');
+         }
+      }
  },
 
 };
@@ -156,6 +162,7 @@ export default {
   background: #fff;
   border-radius: 5px;
   margin: 2px;
+
 }
 .card-text{
   font-size: 17px;
@@ -172,5 +179,11 @@ export default {
 }
 .scroll-animation {
   transform: translateY(-100%);
+}
+
+.checked-img{
+  width: 25%;
+  text-align: center;
+  margin: auto;
 }
 </style>

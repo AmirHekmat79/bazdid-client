@@ -1,7 +1,7 @@
 <template>
     <div class="mx-auto first-step text-center text-amber">
         <StepNavBar/>
-        <StepsAccordion/>
+    
       <div class="step-card-container text-black text-center">
         <h3 class="font-weight-bold">ثبت اطلاعات لوازم جانبی خودرو</h3>
         <h4 class="sub-notice-text">قبل از تصویربرداری راهنمای زیر را مشاهده کنید</h4>
@@ -107,7 +107,6 @@
   <script>
 import StepNavBar from '@/components/StepNavBar.vue';
 import NoticeStepCard from '@/components/NoticeStepCard.vue';
-import StepsAccordion from '@/components/StepsAccordion.vue';
 import { FileSize } from "../utils/filter";
 import {
   priceFilter,
@@ -117,7 +116,7 @@ export default {
   components:{
     StepNavBar , 
     NoticeStepCard ,
-    StepsAccordion
+    
   },
   data() {
     return {
