@@ -3,7 +3,7 @@
     <v-col cols="12">
       <v-img
         style="width: 100%; border-radius: 10px; margin: auto;"
-        src="../../public/images/51426-big.jpeg"
+        src="../../public/images/car.png"
       />
 
       <v-row>
@@ -85,10 +85,13 @@ export default {
 }
 .card-container {
   width: 100%;
-  border-radius: 18px;
   height: 70vh;
-  padding: 22px;
-  border: 3px solid #d2d2d2;
+  background: #fff;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .mobile-input {
   margin-bottom: 47px !important;

@@ -35,6 +35,7 @@
               ref="fileInputs"
               accept="image/*"
               label="عکس خودرو"
+              capture="camera"
               @change="(event) => onFileChange(event, index)"
               :rules="[checkFileSize('file')]"
             ></SingleImage>
