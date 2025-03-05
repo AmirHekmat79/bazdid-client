@@ -20,6 +20,7 @@ export default {
     checkRequired(valueName) {
       return required(this[valueName]);
     },
+  
   },
   data() {
     return {
@@ -153,5 +154,7 @@ export default {
       ],
     };
   },
+
+
 };
 </script>

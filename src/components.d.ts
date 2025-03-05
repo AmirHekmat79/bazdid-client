@@ -7,17 +7,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
     Buttons: typeof import('./components/Buttons.vue')['default']
     CarCards: typeof import('./components/CarCards.vue')['default']
     CheckBox: typeof import('./components/CheckBox.vue')['default']
     ComboBox: typeof import('./components/ComboBox.vue')['default']
+    ComboBoxComponent: typeof import('./components/ComboBoxComponent.vue')['default']
     DatePicker: typeof import('./components/DatePicker.vue')['default']
     Dialogs: typeof import('./components/Dialogs.vue')['default']
     FileInput: typeof import('./components/FileInput.vue')['default']
     Inputs: typeof import('./components/Inputs.vue')['default']
     LoginCard: typeof import('./components/LoginCard.vue')['default']
-    ManualCard: typeof import('./components/ManualCard.vue')['default']
     NoticeStepCard: typeof import('./components/NoticeStepCard.vue')['default']
     RadioButton: typeof import('./components/RadioButton.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
