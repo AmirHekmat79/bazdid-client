@@ -163,9 +163,24 @@ export default {
 }
 .card-container {
   background: #fff;
-  border-radius: 3px;
-  border: 3px solid #eee;
-  border-bottom-left-radius: 0px;
-  padding: 16px;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.v-textarea {
+  margin-top: 20px;
+}
+.v-textarea textarea {
+  border-radius: 10px;
+}
+.v-textarea label {
+  font-weight: bold;
 }
 </style>

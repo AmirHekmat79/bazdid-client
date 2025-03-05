@@ -4,9 +4,11 @@
   >
     <img class="step-nav-icon" src="../../icons/umbrella.png" />
     <v-toolbar-title class="step-title text-center"
-      ><h2 class="font-weight-bold text-info">ایزی بیمه</h2></v-toolbar-title
+      ><h2 class="font-weight-bold text-info text-center">
+        ایزی بیمه
+      </h2></v-toolbar-title
     >
-    <v-spacer></v-spacer>
+
     <PrimaryButton class="font-weight-thin">
       <router-link to="/"
         ><v-icon class="login-icon text-white">mdi-login</v-icon></router-link
